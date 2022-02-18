@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Document Classification </title>
+		<link rel="stylesheet" type="text/css" href="./static/css/style.css">
+
+		<p>
+				{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						<ul class=flashes>
+							{% for message in messages %}
+		  						<li>{{ message }}</li>
+							{% endfor %}
+						</ul>
+	  				{% endif %}
+				{% endwith %}
+	</p>
+</head>
+<body>
+
+		<header>
+
+
+			<form method="post" action="/" enctype="multipart/form-data">
+			<div class="gif">
+				<img src="./static/icon.gif">
+			</div>
+			<div class="title">
+				<h1>DOCUMENT CLASSIFICATION</h1>
+			</div>
+			<div class="title1">
+				<h2>For every minute spent organizing, an hour is earned!</h2>
+				<h3>	-Benjamin Franklin	</h3>
+			</div>
+
+			<div class="file">
+				<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+			</div>
+
+			<div class="button">
+				<input type="submit" value="PREDICT">
+			</div>
+
+			</form>
+
+		</header>
+</body>
+</html>

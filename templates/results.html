@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>success</title>
+        <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+    </head>
+
+    <script>
+        function Enableddl(checkbox)
+        {
+            var ddl = document.getElementById("DDL");
+            ddl.disabled = checkbox.checked ? false:true;
+
+            if(!dd.disabled)
+            {
+                ddl.focus();
+            }
+        }
+
+        function feedback_function()
+        {
+            var edit = document.forms[0];
+            var i;
+            for(i=0;i<edit.length;i++)
+            {
+                if(edit[i].checked)
+                {
+
+                }
+            }
+
+
+        }
+    </script>
+
+    <form method="post">
+        <body>
+            <h1>Predicted Output </h1>
+
+            <br>
+            <table border=5 class="table">
+                <tr>
+                    <th class="sno">Sno.</th>
+                    <th>Image</th>
+                    <th>File name</th>
+                    <th>Class</th>
+                    <th>Date Stamp</th>
+                    <th class="is_edit">Category mismatch</th>
+                    <th class="new_category">New Category Name</th>
+                </tr>
+
+                {%for i,j in results%}
+                <tr>
+                    <td>
+                        <span>{{j['id']}}</span>
+                    </td>
+                    <td>
+                        <img src="./static/thumbnails/{{j['filename']}}.jpg">
+
+                    </td>
+                    <td>
+                        {{j["original_filename"]}}
+                    </td>
+                    <td>
+                        {{j["category"]}}
+                    </td>
+                    <td>
+                        {{j["date_posted"]}}
+                    </td>
+                    <td style ="text-align:center">
+                        <input type="checkbox" name="is_edit" id="checkbox" value="{{j['id']}}" onclick="Enableddl(this)" name="box" ></input>
+                    </td>
+                    <td class="new_category" >
+                        <select id="{{j['id']}}" disabled="disabled" name="Dropdown" required>
+                            <option value="" selected disabled>== Select New Catgeory==</option>
+                            <option value="letter">Letter</option>
+                            <option value="form">Form</option>
+                            <option value="email">Email</option>
+                            <option value="handwritten">Handwritten</option>
+                            <option value="advertisement">Advertisement</option>
+
+                        </select>
+                    </td>
+                </tr>
+
+                {%endfor%}
+            </table>
+            <br>
+            <div style="text-align:center">
+                <input type="submit" value="SUBMIT FEEDBACK" onclick="feedback_function()" >
+            </div>
+
+        </body>
+    </form>
+
+</html>

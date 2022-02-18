@@ -1,0 +1,48 @@
+{
+    "data_train_hdf5_fp": "rvl_cdip_dataset_training.hdf5",
+    "image_path": {
+        "preprocessing": {
+            "height": 128,
+            "in_memory": true,
+            "missing_value_strategy": "backfill",
+            "num_channels": 1,
+            "num_processes": 1,
+            "resize_method": "interpolate",
+            "scaling": "pixel_normalization",
+            "width": 128
+        }
+    },
+    "label": {
+        "idx2str": [
+            "<UNK>",
+            "3",
+            "4",
+            "2",
+            "0",
+            "1"
+        ],
+        "preprocessing": {
+            "fill_value": "<UNK>",
+            "lowercase": false,
+            "missing_value_strategy": "fill_with_const",
+            "most_common": 10000
+        },
+        "str2freq": {
+            "0": 13557,
+            "1": 13343,
+            "2": 19867,
+            "3": 19915,
+            "4": 19886,
+            "<UNK>": 0
+        },
+        "str2idx": {
+            "0": 4,
+            "1": 5,
+            "2": 3,
+            "3": 1,
+            "4": 2,
+            "<UNK>": 0
+        },
+        "vocab_size": 6
+    }
+}
