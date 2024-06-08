@@ -38,9 +38,11 @@ This repository contains a deep learning project focused on document classificat
 
 4. Access the web interface at `http://localhost:5000`.
 
-## License
+## Authors
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+- Swanand Khonde
+- Siddhi Chavan
+- Vivek Sawant
 
 ## Contributing
 
